@@ -7,6 +7,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)
 ![Maven](https://img.shields.io/badge/Maven-3.x-red?logo=apachemaven)
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen)
+![Testes](https://img.shields.io/badge/testes-30%20passing-brightgreen?logo=junit5)
 
 ---
 
@@ -151,6 +152,25 @@ cd agenda-spring-boot
 
 A API estará disponível em `http://localhost:8080`  
 Swagger UI em `http://localhost:8080/swagger-ui.html`
+
+---
+
+## Testes
+
+30 testes automatizados com **JUnit 5 + Mockito**:
+
+| Classe | Testes | Cobertura |
+|---|---|---|
+| `ContatoServiceTest` | 14 | Todos os métodos do Service, incluindo cenários de erro |
+| `ContatoControllerTest` | 15 | Todos os endpoints REST com MockMvc, validações de request |
+| `AgendaSpringBootApplicationTests` | 1 | Smoke test — contexto Spring sobe sem erros |
+
+Banco H2 em memória configurado para o ambiente de teste (não requer PostgreSQL).
+
+```bash
+./mvnw test
+# Tests run: 30, Failures: 0, Errors: 0, Skipped: 0 — BUILD SUCCESS
+```
 
 ---
 
